@@ -7,6 +7,8 @@ const express = require('express'),
   flash = require("connect-flash"),
   methodOverride = require("method-override"),
   LocalStrategy = require("passport-local");
+const PORT = process.env.PORT || 5000
+
 //seedDB = require("./seed");
 
 const commentRoutes = require("./routes/comments"),
@@ -46,6 +48,8 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(3000, function () {
-  console.log('Server started on 3000');
-});
+// app.listen(3000, function () {
+//   console.log('Server started on 3000');
+// });
+
+app.listen(PORT, () => console.log(`Listening on ${PORT}`))
