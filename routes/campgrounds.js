@@ -91,7 +91,4 @@ router.delete("/:id", middleware.checkCampOwnership, function (req, res) {
   });
 });
 
-
-
-
 module.exports = router;
